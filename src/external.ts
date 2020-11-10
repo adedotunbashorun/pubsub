@@ -1,4 +1,11 @@
 import request from 'request';
+
+/**
+ * Send request
+ * @param method
+ * @param url
+ * @param data
+ */
 export const sendRequest = async (method: string, url: string, data: any = {}): Promise<any> => {
   const options = {
     method,

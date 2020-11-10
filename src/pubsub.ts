@@ -2,6 +2,12 @@ import { sendRequest } from './external';
 const subscribers: any = {};
 export const pubSub = () => {
 
+  /**
+   * Publish event that has been subscribed to.
+   *
+   * @param topic
+   * @param data
+   */
   const publish = async(topic: string, data: any) => {
     if (!Array.isArray(subscribers[topic])) {
       return;
@@ -13,6 +19,12 @@ export const pubSub = () => {
     });
   }
 
+  /**
+   * Subscribe to an event
+   *
+   * @param topic
+   * @param payload
+   */
   const subscribe = (topic: string, payload: any) => {
     if (!Array.isArray(subscribers[topic])) {
       subscribers[topic] = [];
